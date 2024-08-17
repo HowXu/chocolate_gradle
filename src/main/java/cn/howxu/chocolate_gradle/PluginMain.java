@@ -1,7 +1,9 @@
 package cn.howxu.chocolate_gradle;
 
+import cn.howxu.chocolate_gradle.Tasks.ResourcesChildTasks.DownloadNatives;
 import cn.howxu.chocolate_gradle.Tasks.ResourcesExtension;
 import cn.howxu.chocolate_gradle.Tasks.ResourcesTask;
+import cn.howxu.chocolate_gradle.Tasks.RunGame;
 import cn.howxu.chocolate_gradle.util.os.OS;
 import cn.howxu.chocolate_gradle.util.os.OSCheck;
 import org.gradle.api.Plugin;
@@ -16,6 +18,9 @@ public class PluginMain implements Plugin<Project> {
         setDependencies(target);
         taskRegistry(target);
         extensionRegistry(target);
+
+        target.getTasks().getByName("runClient").dependsOn("build","getRuntimeResources");
+
     }
 
     public void extensionRegistry(Project target) {
@@ -34,8 +39,8 @@ public class PluginMain implements Plugin<Project> {
         HashMap<String, Class> Tasks = new HashMap<>();
         //任务
         Tasks.put("getRuntimeResources", ResourcesTask.class);
-
-
+        Tasks.put("getNativesResources", DownloadNatives.class);
+        Tasks.put("runClient", RunGame.class);
         //注册
         Tasks.forEach((name, task) -> {
             target.getTasks().create(name, task, _task -> {
@@ -81,9 +86,6 @@ public class PluginMain implements Plugin<Project> {
                 ("org.lwjgl.lwjgl:lwjgl:2.9.4-nightly-20150209"),
                 ("org.lwjgl.lwjgl:lwjgl_util:2.9.4-nightly-20150209"),
                 ("org.lwjgl.lwjgl:lwjgl-platform:2.9.4-nightly-20150209"),
-                ("org.lwjgl.lwjgl:lwjgl:2.9.2-nightly-20140822"),
-                ("org.lwjgl.lwjgl:lwjgl_util:2.9.2-nightly-20140822"),
-                ("org.lwjgl.lwjgl:lwjgl-platform:2.9.2-nightly-20140822"),
                 ("net.java.jinput:jinput-platform:2.0.5"),
                 ("tv.twitch:twitch:6.5")
         };

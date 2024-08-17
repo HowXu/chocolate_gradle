@@ -108,7 +108,7 @@ public class DownloadUtil {
         }
     }
 
-    public void downloadSharedLibraries() throws IOException {
+    public void downloadNatives(boolean isForced) throws IOException {
         //natives-dir
         String NativesPath = runDir + File.separator + "versions" + File.separator + project.getRootProject().getName() + File.separator + project.getRootProject().getName() + "-natives";
         File NativesFolder = new File(NativesPath);
@@ -117,10 +117,8 @@ public class DownloadUtil {
         }
 
         File CacheFolderCheck = new File(runDir + File.separator + "cache" + File.separator + "hash");
-        if (CacheFolderCheck.exists()){
-            project.getLogger().lifecycle("Natives has downloaded, redownload? [y/N]");
-            Scanner scanner = new Scanner(System.in);
-            if (!scanner.next().contains("y")){
+        if (!isForced){
+            if (CacheFolderCheck.exists()){
                 return;
             }
         }
