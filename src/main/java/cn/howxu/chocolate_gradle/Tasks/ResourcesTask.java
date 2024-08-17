@@ -20,6 +20,7 @@ public class ResourcesTask extends DefaultTask {
             util.downloadVersionJson();
             util.downloadLibraries();
             util.downloadSharedLibraries();
+            util.downloadAssets();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
