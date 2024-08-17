@@ -26,7 +26,9 @@ repositories {
 dependencies {
     //Gradle的插件API
     implementation(gradleApi())
-
+    //这两个依赖用来处理下载
+    implementation("commons-io:commons-io:2.16.1")
+    implementation("com.google.code.gson:gson:2.11.0")
 
     //implementation("com.gradle.publish:plugin-publish-plugin:0.21.0")
 }
@@ -56,4 +58,9 @@ publishing {
             url = uri("${projectDir}/repo")
         }
     }
+}
+
+//UTF8中文支持
+tasks.withType<JavaCompile>{
+    options.encoding = "UTF-8"
 }
