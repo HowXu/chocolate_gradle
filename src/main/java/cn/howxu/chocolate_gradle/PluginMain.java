@@ -107,7 +107,11 @@ public class PluginMain implements Plugin<Project> {
         } else if (os.getOs().equals("osx")) {
             tv_twitch_platform = tv_twitch_platform  + "-" + os.getOs();
         }
-        target.getDependencies().add("implementation", tv_twitch_platform);
+
+        if (!os.getOs().equals("linux")){
+            target.getDependencies().add("implementation", tv_twitch_platform);
+        }
+
 
         //tv_twitch_external_platform依赖处理
         String tv_twitch_external_platform = "tv.twitch:twitch-external-platform:4.5:natives";
