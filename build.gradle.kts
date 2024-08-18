@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "cn.howxu.chocolate_gradle"
-version = "1.3"
+version = "1.4"
 
 
 
