@@ -1,5 +1,6 @@
 package cn.howxu.chocolate_gradle;
 
+import cn.howxu.chocolate_gradle.Tasks.BuildArchive;
 import cn.howxu.chocolate_gradle.Tasks.ResourcesChildTasks.DownloadNatives;
 import cn.howxu.chocolate_gradle.Tasks.ResourcesExtension;
 import cn.howxu.chocolate_gradle.Tasks.ResourcesTask;
@@ -20,6 +21,7 @@ public class PluginMain implements Plugin<Project> {
         extensionRegistry(target);
 
         target.getTasks().getByName("runClient").dependsOn("build","getRuntimeResources");
+        target.getTasks().getByName("buildArch").dependsOn("build","getRuntimeResources");
 
     }
 
@@ -41,6 +43,7 @@ public class PluginMain implements Plugin<Project> {
         Tasks.put("getRuntimeResources", ResourcesTask.class);
         Tasks.put("getNativesResources", DownloadNatives.class);
         Tasks.put("runClient", RunGame.class);
+        Tasks.put("buildArch", BuildArchive.class);
         //注册
         Tasks.forEach((name, task) -> {
             target.getTasks().create(name, task, _task -> {

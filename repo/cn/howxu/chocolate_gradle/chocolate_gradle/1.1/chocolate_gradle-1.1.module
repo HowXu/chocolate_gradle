@@ -1,0 +1,123 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "cn.howxu.chocolate_gradle",
+    "module": "chocolate_gradle",
+    "version": "1.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "chocolate_gradle-1.1.jar",
+          "url": "chocolate_gradle-1.1.jar",
+          "size": 21615,
+          "sha512": "ccd9a42cf9efbb4f7362d0ce1efb7138e4b4bf1c50f5156b8e52eec2cb7212b5b0c6ff2ba2d8c79eb3aed3bd9444e2e189994b1d668c6f6a7038cf5bbd75cb27",
+          "sha256": "36089a3c20f16b82bed98208329058659a056363595a96931b352d06cb837dfb",
+          "sha1": "2629e19c2131c37ca0768db3387e8ae2635aad61",
+          "md5": "d64f9bfde8717a547293b77e19ed0268"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.16.1"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.16.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "chocolate_gradle-1.1.jar",
+          "url": "chocolate_gradle-1.1.jar",
+          "size": 21615,
+          "sha512": "ccd9a42cf9efbb4f7362d0ce1efb7138e4b4bf1c50f5156b8e52eec2cb7212b5b0c6ff2ba2d8c79eb3aed3bd9444e2e189994b1d668c6f6a7038cf5bbd75cb27",
+          "sha256": "36089a3c20f16b82bed98208329058659a056363595a96931b352d06cb837dfb",
+          "sha1": "2629e19c2131c37ca0768db3387e8ae2635aad61",
+          "md5": "d64f9bfde8717a547293b77e19ed0268"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "chocolate_gradle-1.1-javadoc.jar",
+          "url": "chocolate_gradle-1.1-javadoc.jar",
+          "size": 75475,
+          "sha512": "6de9e7b622cacae9ce2694773316ef8cbfccdf0a36fdddaaf1f6262557aebe2b251a2e7aae2596e822188b8ab5c558ce63baee494a972eb6f5475f438a915280",
+          "sha256": "21d5d6bab2c68971daa3f199a663287e1e70a2a04836e1a532fdcaa11e290081",
+          "sha1": "b74bc799ee9a3bd42dd17b7a8ffb8dcee53466b3",
+          "md5": "00145d0fcf29eb5e28228e6caa326b83"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "chocolate_gradle-1.1-sources.jar",
+          "url": "chocolate_gradle-1.1-sources.jar",
+          "size": 12843,
+          "sha512": "d52ba9cceee4720d844b5d18c9c9960bcc6925481eb9dd1f74c846166496378d2b9a9c13a69729a4cea86f4dc49b004c5e515d5cd5b77bd65d840154cb1d484e",
+          "sha256": "39fe691a43c6753c55d31c93e9cefc3c3ad0a7824ccaa3b72061e0d06c7e5fe9",
+          "sha1": "6f81e9c543a806293c6b231d78ef2340085af02b",
+          "md5": "9f4f354733f8479327ce7d4d97d1b776"
+        }
+      ]
+    }
+  ]
+}

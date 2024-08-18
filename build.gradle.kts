@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "cn.howxu.chocolate_gradle"
-version = "1.0"
+version = "1.1"
 
 
 
@@ -30,10 +30,12 @@ dependencies {
     implementation("commons-io:commons-io:2.16.1")
     implementation("com.google.code.gson:gson:2.11.0")
 
+    implementation("org.apache.commons:commons-lang3:3.16.0")
+
     //implementation("com.gradle.publish:plugin-publish-plugin:0.21.0")
 }
 
-//发布到gradle远程仓库中的配置
+//发布到gradle远程仓库中的配置 But it doesn't work
 gradlePlugin {
     //设定个人信息
     website = "https://github.com/HowXu/chocolate_gradle"
@@ -50,7 +52,7 @@ gradlePlugin {
     }
 }
 
-//本地发布
+//本地发布 for test
 publishing {
     repositories {
         maven {
